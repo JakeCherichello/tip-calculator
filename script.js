@@ -15,7 +15,29 @@ function calculateAndDisplay ()
     document.getElementById('amtPerPersonResult').innerText =
       'Amount per person: $' + amtPerPers.toFixed(2)
 }
-    
+    //Helper Function to calculate Tip based on the bill and service Quality
+function calculateTip(bill, quality) {
+    if (quality === 'Great') {
+      return bill * 0.2
+    } else if (quality === 'Good') {
+      return bill * 0.15
+    } else if (quality === 'Poor') {
+      return bill * 0.1
+    } else {
+      return 0
+    }
+  }
+  
+  // calculate total bill by adding the original bill and tip
+  function  calculateTotalBill(bill, tip) {
+    return bill + tip
+  }
+  
+  // calculate amount per person by dividing total bill by the number of people
+  function calcAmtPerPrs(totalBill, numOfPpl) {
+    return totalBill / numOfPpl
+  }
+  
 
 
 
